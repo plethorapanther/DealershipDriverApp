@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     #add django app here
     'driver_app',
+    'bootstrap5',
 ]
 
 # Add support for authenticating users

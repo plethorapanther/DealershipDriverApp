@@ -1,0 +1,11 @@
+{% extends 'driver_app/base_template.html' %}
+
+{% block content %}
+<h1>Driver Name: {{ driver.name }}</h1>
+
+<p><strong>Address:</strong> {{ driver.major }}</p>
+<p><strong>Email:</strong> {{ driver.email }}</p>
+{% comment %} <p><strong>Portfolio:</strong><a href="{{ student.portfolio.get_absolute_url }}">{{ student.portfolio.title }} </a></p>
+<p><a class="btn btn-primary" href="{% url 'update_portfolio' student.portfolio.id %}" role="button">Update Portfolio</a></p>
+ {% endcomment %}
+{% endblock %}
