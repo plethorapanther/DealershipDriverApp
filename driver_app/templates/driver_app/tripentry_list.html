@@ -1,0 +1,16 @@
+{% extends 'driver_app/base_template.html' %}
+
+{% block content %}
+<h1>Trip Entry List</h1>
+{% if tripentry_list %}
+<ul>
+{% for tripentry in tripentry_list %}
+<li>
+<a href="{{ tripentry.get_absolute_url }}">{{ tripentry.date }}</a>
+</li>
+{% endfor %}
+</ul>
+{% else %}
+<p>No entries have been created yet.</p>
+{% endif %}
+{% endblock %}

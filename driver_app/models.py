@@ -30,6 +30,7 @@ class TripEntry(models.Model):
     codriver = models.CharField("Codriver", max_length=200, blank = True)
     milesDriven = models.CharField("Miles Driven", max_length=200)
     description = models.TextField(blank = True)
+    driver = models.ForeignKey(Driver, on_delete=models.CASCADE, default = None)
 
     #Define default String to return the name for representing the Model object."
     def __str__(self):

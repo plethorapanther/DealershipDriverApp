@@ -1,0 +1,19 @@
+{% extends 'driver_app/base_template.html' %}
+
+{% block content %}
+<h1>Driver Name: {{ tripentry.driverName }}</h1>
+
+<p><strong>Trip Date:</strong> {{ tripentry.date }}</p>
+<p><strong>Driver Address:</strong> {{ tripentry.driverAddress }}</p>
+<p><strong>Vehicle VIN #:</strong> {{ tripentry.vin }}</p>
+<p><strong>Manager Name:</strong> {{ tripentry.managerName }}</p>
+<p><strong>Stock #:</strong> {{ tripentry.stockNum }}</p>
+<p><strong>Codriver:</strong> {{ tripentry.codriver }}</p>
+<p><strong>Miles Driven:</strong> {{ tripentry.milesDriven }}</p>
+<p><strong>Description:</strong> {{ tripentry.description }}</p>
+
+
+
+
+
+{% endblock %}

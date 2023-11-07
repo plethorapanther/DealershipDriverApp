@@ -3,8 +3,34 @@
 
 <!-- Replace block content in base_template.html -->
 {% block content %}
-<h1>Computer Science Portfolios</h1>
 
-<h2>More to come</h2>
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+  <div class="container">
+    <h1 class="display-3">Dealership Driver Homepage</h1>
+    <p>This website allows you, the driver for Phil Long Ford Dealership, to easily enter all of the information for each trip you do. Here you can add, edit, or delete an entry, view all entries, and update your driver contact information.</p>
+  </div>
+</div>
+<br><br>
+<div class="container">
+  <!-- Example row of columns -->
+  <div class="row">
+    <div class="col-md-4">
+      <h2>Create Driver Entry</h2>
+      <p>This page allows you to fill out all the required fields for a single trip entry. </p>
+      <p><a class="btn btn-secondary" href="#" role="button">Create Entry &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+      <h2>View Drive History</h2>
+      <p>Here you can view a history of all previously recorded trips. Clicking on an individual entry will allow you to view that entry's details.  </p>
+      <p><a class="btn btn-secondary" href="{% url 'trip_entries' %}" role="button">View History &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+      <h2>View/Edit Schedule</h2>
+      <p>View your schedule of availability or edit your schedule to reflect your current availability.</p>
+      <p><a class="btn btn-secondary" href="#" role="button">View Schedule &raquo;</a></p>
+    </div>
+  </div>
+  
 
 {% endblock %}

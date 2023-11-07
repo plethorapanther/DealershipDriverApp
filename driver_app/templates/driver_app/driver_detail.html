@@ -3,9 +3,28 @@
 {% block content %}
 <h1>Driver Name: {{ driver.name }}</h1>
 
-<p><strong>Address:</strong> {{ driver.major }}</p>
+<p><strong>Address:</strong> {{ driver.address }}</p>
 <p><strong>Email:</strong> {{ driver.email }}</p>
-{% comment %} <p><strong>Portfolio:</strong><a href="{{ student.portfolio.get_absolute_url }}">{{ student.portfolio.title }} </a></p>
-<p><a class="btn btn-primary" href="{% url 'update_portfolio' student.portfolio.id %}" role="button">Update Portfolio</a></p>
- {% endcomment %}
+
+<br>
+<h2>Trip Entries</h2>
+<a class="btn btn-primary" href="{% url 'create_trip_entry' driver.id %}" role="button">New</a>
+
+{% if driver_trip_entries %}
+<ul>
+{% for entry in driver_trip_entries %}
+<li>
+{{ entry.date }}:
+<a class="btn btn-primary" href="{{ entry.get_absolute_url }}" role="button">View</a>
+<a class="btn btn-secondary" href="{% url 'update_trip_entry' driver.id entry.id %}" role="button">Update</a>
+<a class="btn btn-danger" href="{% url 'delete_trip_entry' driver.id entry.id %}" role="button">Delete</a>
+</li>
+{% endfor %}
+</ul>
+
+{% else %}
+<p>No entries have been created yet.</p>
+{% endif %}
+{% comment %} <p><a class="btn btn-primary" href="{% url 'update_portfolio' student.portfolio.id %}" role="button">Update Portfolio</a></p> {% endcomment %}
+
 {% endblock %}

@@ -15,5 +15,11 @@ path('driver/<int:pk>/', views.DriverDetailView.as_view(), name='driver-detail')
 #create path to list of all projects
 path('trip_entries/', views.TripEntryListView.as_view(), name= 'trip_entries'),
 #create path to a single project
-path('trip_entry/<int:pk>/', views.TripEntryDetailView.as_view(), name='trip_entry-detail'),
+path('trip_entry/<int:pk>/', views.TripEntryDetailView.as_view(), name='tripentry-detail'),
+#create a path for a driver to create a trip entry 
+path('driver/<int:driver_id>/create_trip_entry/', views.createTripEntry, name='create_trip_entry'),
+#create a path for a driver to update a trip entry 
+path('driver/<int:driver_id>/update_trip_entry/<int:pk>/', views.updateTripEntry, name='update_trip_entry'),
+#create a path for a driver to delete a trip entry 
+path('driver/<int:driver_id>/delete_trip_entry/<int:pk>/', views.deleteTripEntry, name='delete_trip_entry'),
 ]
