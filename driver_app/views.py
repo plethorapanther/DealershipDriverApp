@@ -92,4 +92,4 @@ def deleteTripEntry(request, driver_id, pk):
         return redirect('/')
     context = {'trip': trip,
     'driver': driver}
-    return render(request, 'portfolio_app/delete_project.html', context)
+    return render(request, 'driver_app/delete_trip_entry.html', context)
