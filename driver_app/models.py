@@ -1,8 +1,10 @@
 from django.db import models
 from django.urls import reverse
+from django.conf import settings
 
 # Create your models here.
 class Driver(models.Model):
+    driver = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, blank=True)
     name = models.CharField("Name", max_length=200)
     address = models.CharField("Address", max_length=200)
     email = models.CharField("Email Address", max_length=200)

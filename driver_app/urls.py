@@ -1,5 +1,7 @@
 from django.urls import path
 from . import views
+from django.conf.urls import include
+
 
 urlpatterns = [
 #path function defines a url pattern
@@ -22,4 +24,7 @@ path('driver/<int:driver_id>/create_trip_entry/', views.createTripEntry, name='c
 path('driver/<int:driver_id>/update_trip_entry/<int:pk>/', views.updateTripEntry, name='update_trip_entry'),
 #create a path for a driver to delete a trip entry 
 path('driver/<int:driver_id>/delete_trip_entry/<int:pk>/', views.deleteTripEntry, name='delete_trip_entry'),
+path('accounts/', include('django.contrib.auth.urls')),
+path('register/', views.register, name= 'register'),
+
 ]
