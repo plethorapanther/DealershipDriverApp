@@ -18,10 +18,10 @@ def index(request):
     return render( request, 'driver_app/index.html')
  
 
-class DriverListView(LoginRequiredMixin, generic.ListView):
+class DriverListView(generic.ListView):
     model = Driver
 
-class DriverDetailView(LoginRequiredMixin, generic.DetailView):
+class DriverDetailView(generic.DetailView):
     model = Driver
 
     def get_context_data(self, **kwargs):
@@ -36,10 +36,10 @@ class DriverDetailView(LoginRequiredMixin, generic.DetailView):
         context['driver_trip_entries'] = entries
         return context
 
-class TripEntryListView(LoginRequiredMixin, generic.ListView):
+class TripEntryListView(generic.ListView):
     model = TripEntry
 
-class TripEntryDetailView(LoginRequiredMixin, generic.DetailView):
+class TripEntryDetailView(generic.DetailView):
     model = TripEntry
 
 @login_required
